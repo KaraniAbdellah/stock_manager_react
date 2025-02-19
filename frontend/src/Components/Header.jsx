@@ -1,30 +1,49 @@
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faBars, faForward } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Header() {
     const [user_state, setUserSatate] = useState("Login");
+    const [show, setShow] = useState(false);
 
+    const handleShowHidden = () => {
+        const aside = document.querySelector("aside");
+        const second_content = document.querySelector(".second_content");
+        setShow(!show);
+        if (window.innerWidth <= 1200) {
+            second_content.classList.add("setWidth");
+            aside.classList.toggle("hideAside");
+        } else {
+            aside.classList.toggle("hideAside");
+            second_content.classList.toggle("setWidth");
+        }
+    }
 
     return (
-        <header className='bg-gray-200 h-[60px] w-[100%] flex justify-between items-start p-2'>
+        <header className='bg-gray-200 h-[70px] w-[100%] flex justify-between items-center p-2'>
             <div className="logo">
-                <p className="text-3xl text-zinc-700 ml-2 dark:text-white font-bold">Semicolon</p>
+                <p className="text-3xl text-zinc-700 ml-2 font-bold">Semicolon</p>
             </div>
             <main className="flex">
-                <ul className='flex justify-between items-center mr-5'>
+                <ul className='flex justify-between items-center mr-5 md:hidden'>
                     <li><a className='text-blue-700 hover:text-blue-800 transition-all text-2xl mr-5' href="https://www.linkedin.com/in/abdellah-karani-965928294/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
                     <li><a className='text-gray-900 hover:text-black transition-all text-2xl mr-5' href="https://github.com/KaraniAbdellah"><FontAwesomeIcon icon={faGithub} /></a></li>
                     <li><a className='text-blue-400 hover:text-blue-500 transition-all text-2xl' href="https://x.com/karani66745"><FontAwesomeIcon icon={faTwitter} /></a></li>
                 </ul>
-                    
-                <button class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                <button onClick={() => handleShowHidden()} className="relative mr-5 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white  focus:ring-blue-300 ">
+                    <span className="switch_ele relative text-lg text-zinc-700 px-4 py-2 hover:text-white transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent">
+                        {show ? <FontAwesomeIcon className='text-lg' icon={faForward} /> : <FontAwesomeIcon className='text-lg' icon={faBars} />}
+                    </span>
+                </button>
+                <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white  focus:ring-blue-300 ">
+                    <span className="relative text-lg text-zinc-700 px-4 py-2 hover:text-white transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent">
                     {user_state}
                     </span>
                 </button>
+
 
             </main>
         </header>

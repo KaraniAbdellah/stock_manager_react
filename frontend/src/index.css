@@ -28,6 +28,33 @@ code {
 .active_ele {
     background-color: #e8e8e8 !important;
     color: #444;
-    border-radius: 10px;
+    border-radius: 5px;
 }
+
+
+
+.hideAside {
+  display: none;
+}
+.setWidth {
+  width: 100% !important;
+}
+
+
+
+aside {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 240px !important;
+}
+.second_content {
+  width: calc(100% - 280px);
+}
+.main_element {
+  display: flex;
+  justify-content: end;
+}
+
+
 

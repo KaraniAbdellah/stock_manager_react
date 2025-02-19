@@ -20,8 +20,7 @@ import Login from './Login'
 
 function Main() {
     return (
-        <div className='flex justify-between items-start'>
-            <NavBar />
+        <div className='main_element'>
             <Routes>
                 <Route path='/' element={<DashBoard></DashBoard>}></Route>
                 <Route path='/Products' element={<Products></Products>}></Route>
