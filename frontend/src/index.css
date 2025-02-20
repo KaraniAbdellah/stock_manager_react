@@ -37,7 +37,7 @@ code {
   display: none;
 }
 .setWidth {
-  width: 100% !important;
+  width:calc(100% - 20px) !important;
 }
 
 
@@ -48,6 +48,7 @@ aside {
     left: 0;
     width: 240px !important;
     height: calc(100vh - 90px);
+    z-index: 100;
 }
 .second_content {
   width: calc(100% - 280px);

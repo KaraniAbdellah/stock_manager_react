@@ -21,10 +21,12 @@ const AddProduct = ({setProducts, products,  setEnbleAddProduct, enbleAddProduct
             name: product_name_input.value,
             description: description_input.value,
             img: image_input.value,
-            price_input: price_input.value,
-            stock_input: stock_input.value
+            price: price_input.value,
+            stock: stock_input.value
         }
         setProducts((p) => [...p, product]);
+
+        
     }
     
     return (
