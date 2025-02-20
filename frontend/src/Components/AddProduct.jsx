@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-
+import axios from "axios";
 
 const AddProduct = ({setProducts, products,  setEnbleAddProduct, enbleAddProduct}) => {
     const handleCancel = () => {
@@ -25,8 +25,11 @@ const AddProduct = ({setProducts, products,  setEnbleAddProduct, enbleAddProduct
             stock: stock_input.value
         }
         setProducts((p) => [...p, product]);
-
         
+        axios.post("http://127.0.0.1:3001/api/addProduct", product).then((res) => {
+            console.log(res);
+        });
+
     }
     
     return (

@@ -37,7 +37,7 @@ router.delete("/deleteProduct/:id", async (req, res) => {
     }
 });
 
-router.post("/addProduct/:id", async (req, res) => {
+router.post("/addProduct", async (req, res) => {
     console.log("Request Come From Axios for Posting Products");
     // Start Add Product To DataBase
     const product = req.body;
