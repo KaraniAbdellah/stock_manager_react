@@ -47,6 +47,7 @@ aside {
     top: 70px;
     left: 0;
     width: 240px !important;
+    height: calc(100vh - 90px);
 }
 .second_content {
   width: calc(100% - 280px);

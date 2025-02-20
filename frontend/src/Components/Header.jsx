@@ -2,7 +2,7 @@
 import { use, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faForward } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBackward } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Header() {
@@ -28,14 +28,14 @@ export default function Header() {
                 <p className="text-3xl text-zinc-700 ml-2 font-bold">Semicolon</p>
             </div>
             <main className="flex">
-                <ul className='flex justify-between items-center mr-5 md:hidden'>
+                <ul className='justify-between items-center mr-5 hidden lg:flex md:hidden sm:hidden'>
                     <li><a className='text-blue-700 hover:text-blue-800 transition-all text-2xl mr-5' href="https://www.linkedin.com/in/abdellah-karani-965928294/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
                     <li><a className='text-gray-900 hover:text-black transition-all text-2xl mr-5' href="https://github.com/KaraniAbdellah"><FontAwesomeIcon icon={faGithub} /></a></li>
                     <li><a className='text-blue-400 hover:text-blue-500 transition-all text-2xl' href="https://x.com/karani66745"><FontAwesomeIcon icon={faTwitter} /></a></li>
                 </ul>
                 <button onClick={() => handleShowHidden()} className="relative mr-5 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white  focus:ring-blue-300 ">
                     <span className="switch_ele relative text-lg text-zinc-700 px-4 py-2 hover:text-white transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent">
-                        {show ? <FontAwesomeIcon className='text-lg' icon={faForward} /> : <FontAwesomeIcon className='text-lg' icon={faBars} />}
+                        {show ? <FontAwesomeIcon className='text-lg' icon={faBackward} /> : <FontAwesomeIcon className='text-lg' icon={faBars} />}
                     </span>
                 </button>
                 <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white  focus:ring-blue-300 ">
@@ -43,8 +43,6 @@ export default function Header() {
                     {user_state}
                     </span>
                 </button>
-
-
             </main>
         </header>
     );
