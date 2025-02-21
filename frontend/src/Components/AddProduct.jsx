@@ -5,8 +5,8 @@ import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-ic
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
-const AddProduct = ({editedProductId, Edit_Add_Action, SetEdit_Add_Action, setProducts, products,  setEnbleAddProduct, enbleAddProduct}) => {
-    const [Base64Data, setBase64Data] = useState(""); 
+const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Add_Action, setProducts, products,  setEnbleAddProduct, enbleAddProduct}) => {
+    const [Base64Data, setBase64Data] = useState("");
     // Function to Hide Add Product Form
     const handleCancel = () => {
         setEnbleAddProduct(!enbleAddProduct);
@@ -42,6 +42,7 @@ const AddProduct = ({editedProductId, Edit_Add_Action, SetEdit_Add_Action, setPr
 
     // Listen to Image 
     useEffect(() => {
+        console.log(productEdited);
         const image_input = document.querySelector(".image_input");
         image_input.addEventListener("change", async (event) => {
             const file = event.target.files[0];
@@ -118,20 +119,20 @@ const AddProduct = ({editedProductId, Edit_Add_Action, SetEdit_Add_Action, setPr
             <form action="" className="mt-4">
                 <div className="product_name w-full mb-3">
                     <label className="block w-full mb-2 font-semibold text-start" htmlFor="">Product name</label>
-                    <input className='product_name_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' type="text" placeholder='product name...' />
+                    <input defaultValue={productEdited.name} className='product_name_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' type="text" placeholder='product name...' />
                 </div>
                 <div className="description mb-3">
                     <label className="block w-full mb-2 font-semibold text-start" htmlFor="">Description</label>
-                    <textarea className='description_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' placeholder='description...' />
+                    <textarea defaultValue={productEdited.description} className='description_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' placeholder='description...' />
                 </div>
                 <div className="price_stock flex justify-between items-center mb-3">
                     <div className="price w-[47%]">
                         <label className="block w-full mb-2 font-semibold text-start" htmlFor="">Price$</label>
-                        <input min="0" className='price_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' type="number" placeholder='0' />
+                        <input defaultValue={productEdited.price} min="0" className='price_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' type="number" placeholder='0' />
                     </div>
                     <div className="stock w-[47%]">
                         <label className="block w-full mb-2 font-semibold text-start" htmlFor="">Stock</label>
-                        <input min="0" className='stock_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' type="number" placeholder='0' />
+                        <input defaultValue={productEdited.stock} min="0" className='stock_input w-[100%] p-2 rounded-md outline-none border-2 border-solid border-sky-700' type="number" placeholder='0' />
                     </div>
                 </div>
                 <div className="image mb-5">

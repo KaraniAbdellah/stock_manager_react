@@ -8,16 +8,27 @@ export default function DashBoard() {
     const [enbleAddProduct, setEnbleAddProduct] = useState(false);
     const [Edit_Add_Action, SetEdit_Add_Action] = useState({desc: "Add Product", IsEdit: false});
     const [editedProductId, setEditedProductId] = useState("");
+    const [productEdited, setProductEdited]  = useState({name: "", description: "", price: "", stock: "", img: ""});
+    const [FiltredProducts, setFiltredProducts] = useState([]);
 
     const handleAddProduct = () => {
         SetEdit_Add_Action({desc: "Add Product", IsEdit: false});
         setEnbleAddProduct(!enbleAddProduct);
     };
 
+    const handleSearching = (e) => {
+        const FiltredProducts = products.filter((p) => p.name.includes(e.target.value));
+        setFiltredProducts(FiltredProducts);
+        console.log(FiltredProducts);
+    }
+
     const EditProduct = (e) => {
         setEditedProductId(e.target.parentElement.parentElement.getAttribute("id"));
         setEnbleAddProduct(!enbleAddProduct);
         SetEdit_Add_Action({desc: "Edit Product", IsEdit: true});
+
+        const product = products.find((p) => p._id === e.target.parentElement.parentElement.getAttribute("id"));
+        setProductEdited(product);
     }
 
     const DeleteProduct = (e) => {
@@ -32,6 +43,7 @@ export default function DashBoard() {
     useEffect(() => {
         axios.get("http://127.0.0.1:3001/api/GetAllProduct").then((res) => {
             setProducts(res.data);
+            setFiltredProducts(res.data);
         });
     }, []);
 
@@ -44,6 +56,7 @@ export default function DashBoard() {
                 className="lg:w-[70%] lg:mb-0 w-[100%] mb-3 md:w-[70%] md:mb-0 p-3 rounded-md outline-none border-2 border-solid border-sky-700"
                 type="text"
                 placeholder="product name..."
+                onChange={(e) => handleSearching(e)}
             />
             <button
                 onClick={() => handleAddProduct()}
@@ -58,6 +71,7 @@ export default function DashBoard() {
         <div className="">
             {enbleAddProduct ? (
             <AddProduct
+                productEdited = {productEdited} 
                 editedProductId = {editedProductId}
                 Edit_Add_Action = {Edit_Add_Action}
                 SetEdit_Add_Action={SetEdit_Add_Action}
@@ -95,7 +109,7 @@ export default function DashBoard() {
                 </tr>
             </thead>
             <tbody>
-                {products.map((product, index) => {
+                {FiltredProducts.map((product, index) => {
                 return (
                     <tr key={product._id} id={product._id} className="hover:bg-gray-100">
                     <td className="whitespace-nowrap p-2 border-sky-900 border-2 border-solid">
