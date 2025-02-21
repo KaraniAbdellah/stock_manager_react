@@ -60,3 +60,15 @@ aside {
 
 
 
+/* Classes For Inputs */
+.InvalidInputs {
+  border: 2px solid red;
+}
+.validInputs {
+  border: 2px solid green;
+}
+
+
+
+
+

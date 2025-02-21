@@ -6,14 +6,20 @@ import axios from "axios";
 export default function DashBoard() {
     const [products, setProducts] = useState([]);
     const [enbleAddProduct, setEnbleAddProduct] = useState(false);
-    
+    const [Edit_Add_Action, SetEdit_Add_Action] = useState({desc: "Add Product", IsEdit: false});
+    const [editedProductId, setEditedProductId] = useState("");
+
     const handleAddProduct = () => {
+        SetEdit_Add_Action({desc: "Add Product", IsEdit: false});
         setEnbleAddProduct(!enbleAddProduct);
     };
 
-    const EditProduct = () => {
+    const EditProduct = (e) => {
+        setEditedProductId(e.target.parentElement.parentElement.getAttribute("id"));
         setEnbleAddProduct(!enbleAddProduct);
+        SetEdit_Add_Action({desc: "Edit Product", IsEdit: true});
     }
+
     const DeleteProduct = (e) => {
         const id = e.target.parentElement.parentElement.getAttribute("id");
         console.log(e.target.parentElement.parentElement.remove());
@@ -52,6 +58,9 @@ export default function DashBoard() {
         <div className="">
             {enbleAddProduct ? (
             <AddProduct
+                editedProductId = {editedProductId}
+                Edit_Add_Action = {Edit_Add_Action}
+                SetEdit_Add_Action={SetEdit_Add_Action}
                 setProducts={setProducts}
                 products={products}
                 setEnbleAddProduct={setEnbleAddProduct}
@@ -101,11 +110,11 @@ export default function DashBoard() {
                     <td className="whitespace-nowrap p-2 border-sky-900 border-2 border-solid">
                         {product.stock}
                     </td>
-                    <td className="whitespace-nowrap p-2 border-sky-900 border-2 border-solid">
+                    <td className="whitespace-nowrap border-sky-900 border-2 border-solid">
                         <img
                         src={product.img}
                         alt="Example Product"
-                        className="w-12 h-12 object-cover"
+                        className="h-12 object-cover w-[100%]"
                         />
                     </td>
                     <td className="whitespace-nowrap p-2 border-sky-900 border-2 border-solid">
