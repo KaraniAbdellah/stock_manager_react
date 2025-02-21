@@ -5,7 +5,7 @@ import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-ic
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
-const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Add_Action, setProducts, products,  setEnbleAddProduct, enbleAddProduct}) => {
+const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Add_Action, setProducts, products,  FiltredProducts, setFiltredProducts, setEnbleAddProduct, enbleAddProduct}) => {
     const [Base64Data, setBase64Data] = useState("");
     // Function to Hide Add Product Form
     const handleCancel = () => {
@@ -80,6 +80,7 @@ const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Ad
             if (!Edit_Add_Action.IsEdit) {
                 // For Add Product
                 setProducts((p) => [...p, product]);
+                setFiltredProducts((p) => [...p, product]);
                 axios.post("http://127.0.0.1:3001/api/addProduct", product).then((res) => {
                     console.log(res);
                 });
@@ -88,6 +89,11 @@ const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Ad
                 products.map((p, index) => {
                     if (p._id === editedProductId) {
                         products[index] = product;
+                    }
+                });
+                FiltredProducts.map((p, index) => {
+                    if (p._id === editedProductId) {
+                        FiltredProducts[index] = product;
                     }
                 });
                 // Put Request For Edit

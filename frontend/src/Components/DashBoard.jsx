@@ -77,6 +77,8 @@ export default function DashBoard() {
                 SetEdit_Add_Action={SetEdit_Add_Action}
                 setProducts={setProducts}
                 products={products}
+                FiltredProducts = {FiltredProducts}
+                setFiltredProducts = {setFiltredProducts}
                 setEnbleAddProduct={setEnbleAddProduct}
                 enbleAddProduct={enbleAddProduct}
             ></AddProduct>
