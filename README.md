@@ -37,5 +37,5 @@ cd ../backend
 nodemon server.js # run the backend
 ```
 
-** made with love by <a href="https://www.linkedin.com/in/abdellah-karani-965928294/">Abdellah Karani</a>
+** made with love by <a href="https://www.linkedin.com/in/abdellah-karani-965928294/">Abdellah Karani</a> **
 
