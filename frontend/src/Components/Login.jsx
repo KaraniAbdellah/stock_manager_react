@@ -42,9 +42,11 @@ export default function Login() {
           placeholder="Password"
           className={`w-full password p-2 mb-4 border rounded-md`}
         />
-        <button className="w-full bg-sky-900 text-white border-2 border-white border-solid p-2 rounded-md" onClick={(e) => handleSubmit(e)}>
-        Login
-        </button>
+        <Link to="/">
+            <button className="w-full bg-sky-900 text-white border-2 border-white border-solid p-2 rounded-md" onClick={(e) => handleSubmit(e)}>
+            Login
+            </button>
+        </Link>
       </div>
     </div>}
     </div>
