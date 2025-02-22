@@ -1,5 +1,5 @@
 
-import { use, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faBackward } from '@fortawesome/free-solid-svg-icons';
