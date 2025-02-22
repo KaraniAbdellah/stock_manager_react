@@ -3,10 +3,10 @@ import { use, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faBackward } from '@fortawesome/free-solid-svg-icons';
-
+import {Link} from "react-router-dom";
 
 export default function Header() {
-    const [user_state, setUserSatate] = useState("Login");
+    const [user_state, setUserSatate] = useState("Sign in");
     const [show, setShow] = useState(false);
 
     const handleShowHidden = () => {
@@ -38,11 +38,13 @@ export default function Header() {
                         {show ? <FontAwesomeIcon className='text-lg' icon={faBackward} /> : <FontAwesomeIcon className='text-lg' icon={faBars} />}
                     </span>
                 </button>
-                <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white  focus:ring-blue-300 ">
-                    <span className="relative text-lg text-zinc-700 px-4 py-2 hover:text-white transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent">
-                    {user_state}
-                    </span>
-                </button>
+                <Link to="/sign_in">
+                    <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-sky-700 to-blue-800 group-hover:from-sky-600 group-hover:to-blue-500 hover:text-white  focus:ring-blue-300 ">
+                        <span className="relative text-lg text-zinc-700 px-4 py-2 hover:text-white transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent">
+                        {user_state}
+                        </span>
+                    </button>
+                </Link>
             </main>
         </header>
     );

@@ -32,7 +32,7 @@ function Main() {
                 <Route path='/Reports' element={<Reports></Reports>}></Route>
                 <Route path='/People' element={<People></People>}></Route>
                 <Route path='/Setting' element={<Setting></Setting>}></Route>
-                <Route path='/Login' element={<Login></Login>}></Route>
+                <Route path='/login' element={<Login></Login>}></Route>
             </Routes>
         </div>
     );

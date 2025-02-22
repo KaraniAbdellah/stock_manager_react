@@ -106,6 +106,10 @@ const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Ad
             const message_ele = document.querySelector(".message");
             message_ele.classList.add("block");
             message_ele.classList.remove("hidden");
+            setTimeout(() => {
+                message_ele.classList.remove("block");
+                message_ele.classList.add("hidden");
+            }, 1000);
         } else {
             console.log("Some Inputs Was Empty");
         }
