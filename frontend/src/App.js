@@ -1,15 +1,15 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import "./index.css";
 import NavBar from './Components/NavBar';
 import {Routes, Route} from "react-router-dom";
-import Login from './Components/Login';
-import SignIn from './Components/Sign_In';
+
 
 
 function App() {
+  const [width, setWidth] = useState(false);
   return (
     <div className="App">
         <Routes>
@@ -17,11 +17,9 @@ function App() {
             <>
               <Header></Header>
               <NavBar />
-              <Main></Main>
+              <Main width={width} setWidth={setWidth}></Main>
             </>
           }></Route>
-          <Route path='/login' element={<Login></Login>}></Route>
-          <Route path='/sign_in' element={<SignIn></SignIn>}></Route>
         </Routes>
     </div>
   );

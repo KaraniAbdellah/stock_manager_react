@@ -37,7 +37,7 @@ const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Ad
             fileReader.onerror = (error) => {
                 reject(error);
             }
-        })
+        });
     }
 
     // Listen to Image 

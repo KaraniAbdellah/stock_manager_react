@@ -6,6 +6,7 @@ import {Link} from "react-router";
 export default function NavBar() {
     useEffect(() => {
         const click_eles = document.querySelectorAll(".click_ele");
+        const second_contents = document.querySelectorAll(".second_content");
         click_eles.forEach((ele) => {
             ele.addEventListener("click", function() {
                 click_eles.forEach((ele) => {
@@ -14,6 +15,7 @@ export default function NavBar() {
                 ele.classList.add("active_ele");
             });
         });
+
         window.addEventListener("resize", function() {
             const aside = document.querySelector("aside");
             const second_content = document.querySelector(".second_content");
@@ -26,10 +28,9 @@ export default function NavBar() {
                 second_content.classList.remove("setWidth");
             }
         });
-        
+
         // Run once on page load
         window.dispatchEvent(new Event("resize"));
-        
     }, []);
     return (
         <aside className='aside w-[18%] items-start rounded-md bg-gradient-to-b px-3 my-3 ml-3 py-4 from-sky-700 to-sky-800'>
@@ -47,39 +48,9 @@ export default function NavBar() {
                 </Link>
                 </li>
                 <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
-                <Link to="/Adj" className="flex justify-start items-center">
-                    <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faAdjust} />
-                    <span className=''>Adjustments</span>
-                </Link>
-                </li>
-                <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
-                <Link to="/Quat" className="flex justify-start items-center">
-                    <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faFileInvoice} />
-                    <span className=''>Quotations</span>
-                </Link>
-                </li>
-                <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
-                <Link to="/Purch" className="flex justify-start items-center">
-                    <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faShoppingCart} />
-                    <span className=''>Purchases</span>
-                </Link>
-                </li>
-                <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
                 <Link to="/Sales" className="flex justify-start items-center">
                     <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faChartLine} />
                     <span className=''>Sales</span>
-                </Link>
-                </li>
-                <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
-                <Link to="/Expen" className="flex justify-start items-center">
-                    <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faDollarSign} />
-                    <span className=''>Expenses</span>
-                </Link>
-                </li>
-                <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
-                <Link to="/Reports" className="flex justify-start items-center">
-                    <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faChartBar} />
-                    <span className=''>Reports</span>
                 </Link>
                 </li>
                 <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
@@ -94,13 +65,22 @@ export default function NavBar() {
                     <span className=''>Settings</span>
                 </Link>
                 </li>
-                <li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
-                <Link to="/Login" className="flex justify-start items-center">
-                    <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faSignOutAlt} />
-                    <span className=''>LogOut</span>
-                </Link>
-                </li>
+                
             </ul>
         </aside>
     );
+}
+
+
+
+
+{
+/* 
+<li className='w-[100%] hover:bg-gray-600 hover:rounded-md hover:transition-all hover:bg-opacity-25 click_ele mb-1 text-center px-3 text-white py-2 text-xl'>
+    <Link to="/Login" className="flex justify-start items-center">
+        <FontAwesomeIcon className='mr-3 w-[22px] h-[22px]' icon={faSignOutAlt} />
+        <span className=''>LogOut</span>
+    </Link>
+</li> 
+*/
 }

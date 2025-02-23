@@ -3,36 +3,22 @@ import "../index.css";
 import {Routes, Route} from "react-router";
 
 // import all components
-import NavBar from './NavBar';
 import DashBoard from './DashBoard';
-import Products from './Products'
-import Adj from './Adj'
-import Quat from "./Quat"
-import Purch from './Purch'
-import Sales from "./Sales"
-import Expen from './Expen'
-import Reports from './Reports'
-import People from './People'
-import Setting from './Setting'
-import Login from './Login'
+import Products from './Products';
+import Sales from "./Sales";
+import People from './People';
+import Setting from './Setting';
 
 
-
-function Main() {
+function Main(width, setWidth) {
     return (
         <div className='main_element'>
             <Routes>
-                <Route path='/' element={<DashBoard></DashBoard>}></Route>
-                <Route path='/Products' element={<Products></Products>}></Route>
-                <Route path='/Adj' element={<Adj></Adj>}></Route>
-                <Route path='/Quat' element={<Quat></Quat>}></Route>
-                <Route path='/Purch' element={<Purch></Purch>}></Route>
-                <Route path='/Sales' element={<Sales></Sales>}></Route>
-                <Route path='/Expen' element={<Expen></Expen>}></Route>
-                <Route path='/Reports' element={<Reports></Reports>}></Route>
-                <Route path='/People' element={<People></People>}></Route>
-                <Route path='/Setting' element={<Setting></Setting>}></Route>
-                <Route path='/login' element={<Login></Login>}></Route>
+                <Route path='/' element={<DashBoard width={width}></DashBoard>}></Route>
+                <Route path='/Products' element={<Products width={width}></Products>}></Route>
+                <Route path='/Sales' element={<Sales width={width}></Sales>}></Route>
+                <Route path='/People' element={<People width={width}></People>}></Route>
+                <Route path='/Setting' element={<Setting width={width}></Setting>}></Route>
             </Routes>
         </div>
     );

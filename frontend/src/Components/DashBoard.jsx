@@ -3,13 +3,20 @@ import "../index.css";
 import AddProduct from "./AddProduct";
 import axios from "axios";
 
-export default function DashBoard() {
+export default function DashBoard(width) {
     const [products, setProducts] = useState([]);
     const [enbleAddProduct, setEnbleAddProduct] = useState(false);
     const [Edit_Add_Action, SetEdit_Add_Action] = useState({desc: "Add Product", IsEdit: false});
     const [editedProductId, setEditedProductId] = useState("");
     const [productEdited, setProductEdited]  = useState({name: "", description: "", price: "", stock: "", img: ""});
     const [FiltredProducts, setFiltredProducts] = useState([]);
+
+    useEffect(() => {
+        if (width && window.innerWidth <= 1200) {
+            const second_content = document.querySelector(".second_content");
+            second_content.classList.add("setWidth");
+        }
+    }, []);
 
     const handleAddProduct = () => {
         SetEdit_Add_Action({desc: "Add Product", IsEdit: false});
