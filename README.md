@@ -9,13 +9,18 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-
 </div>
 
 ### A friendly application manager and task runner for React.js
 
 <img src="app_img/dash.png">
 <img src="app_img/add_product.png">
+<img src="app_img/products.png">
+<img src="app_img/sales.png">
+<img src="app_img/peoples.png">
+<img src="app_img/setting.png">
+
+
 
 ### Features Of Task Manager
 <ul>
