@@ -103,6 +103,9 @@ const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Ad
                     console.log(err);
                 });
             }
+            // Set Input To Default
+            product_name_input.value = description_input.value = price_input.value = stock_input.value = "";
+
             const message_ele = document.querySelector(".message");
             message_ele.classList.add("block");
             message_ele.classList.remove("hidden");
@@ -113,6 +116,8 @@ const AddProduct = ({productEdited, editedProductId, Edit_Add_Action, SetEdit_Ad
         } else {
             console.log("Some Inputs Was Empty");
         }
+
+
     }
 
     return (

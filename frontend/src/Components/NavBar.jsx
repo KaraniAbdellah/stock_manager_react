@@ -21,7 +21,9 @@ export default function NavBar() {
             const second_content = document.querySelector(".second_content");
         
             if (window.innerWidth <= 1200) {
-                aside.classList.add("hideAside");
+                if (aside) {
+                    aside.classList.add("hideAside");
+                }
                 second_content.classList.add("setWidth");
             } else {
                 aside.classList.remove("hideAside");

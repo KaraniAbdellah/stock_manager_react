@@ -230,7 +230,7 @@ export default function Setting(width) {
             <h2 className="text-xl text-start font-semibold">BackUp Manager</h2>
             <p className="mb-5 text-start text-gray-500">
               Control Backup Data And Location
-            </p>
+            </p>enene
             {["Dally", "Weekly", "Monthly"].map((frequency) => (
               <div key={frequency} className="flex items-center mb-1">
                 <input

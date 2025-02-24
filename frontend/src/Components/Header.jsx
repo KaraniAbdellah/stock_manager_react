@@ -23,7 +23,7 @@ export default function Header() {
     return (
         <header className='bg-gray-200 h-[70px] w-[100%] flex justify-between items-center p-2'>
             <div className="logo">
-                <p className="text-3xl text-sky-900 ml-2 font-bold">Semicolon</p>
+                <p className="text-3xl text-sky-900 ml-2 font-bold">Task Manager</p>
             </div>
             <main className="flex">
                 <ul className='justify-between items-center mr-5 hidden lg:flex md:hidden sm:hidden'>
