@@ -13,12 +13,11 @@
 
 ### A friendly application manager and task runner for React.js
 
-<img src="app_img/dash.png">
-<img src="app_img/add_product.png">
+<img src="app_img/dashboard.png">
 <img src="app_img/products.png">
+<img src="app_img/people.png">
 <img src="app_img/sales.png">
-<img src="app_img/peoples.png">
-<img src="app_img/setting.png">
+<img src="app_img/settings.png">
 
 
 
