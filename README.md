@@ -21,15 +21,9 @@
 
 
 
-### Features Of Task Manager
-<ul>
-    <li>Add product</li>
-    <li>Edit product</li>
-    <li>Delete product</li>
-    <li>View all products</li>
-    <li>View all admins</li>
-    <li>...</li>
-</ul>
+
+The Task Manager includes features such as adding, editing, and deleting products, as well as viewing all products and administrators.
+
 
 
 ### Contribute
