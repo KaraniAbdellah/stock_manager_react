@@ -22,7 +22,7 @@
 
 
 
-The Task Manager includes features such as adding, editing, and deleting products, as well as viewing all products and administrators.
+The Stock Manager includes features such as adding, editing, and deleting products, as well as viewing all products and administrators.
 
 
 
